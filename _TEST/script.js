@@ -50,11 +50,28 @@
 
 // console.log(typeof(i));
 
-let arr = [1, 15, 4],
-    i = arr.sort(compareNum);
+// let arr = [1, 15, 4],
+//     i = arr.sort(compareNum);
 
-function compareNum(a,b) {
-    return a-b;
+// function compareNum(a,b) {
+//     return a-b;
+// }
+
+// console.log(arr);
+
+let soldier = {
+    health: 200,
+    armor: 100
+};
+
+for(let key in soldier) {
+    console.log(key + ": " + soldier[key]);
 }
+let testOb = {
+	a: 1,
+	b: 2
+};
 
-console.log(arr);
+for(let key in testOb) {
+	console.log(key + ": " + testOb[key]);
+}
