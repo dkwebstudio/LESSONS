@@ -1,77 +1,43 @@
 'use strict';
 
-// let options = {
-//     width: 1024,
-//     height: 1024,
-//     name: "test"
-// };
+let box = document.getElementById('box'),
+    btn = document.getElementsByTagName('button'),
+    circle = document.getElementsByClassName('circle'),
+    heart = document.querySelectorAll('.heart'),
+    oneHeart = document.querySelector('.heart'),
+    wrapper =  document.querySelector('.wrapper');
 
-// options.bool = false;
-// options.colors = {
-//     border: "black",
-//     background: "red"
-// };
+box.style.backgroundColor = 'blue';
+btn[1].style.borderRadius = '100%';
 
-// delete options.bool;
+circle[0].style.backgroundColor = 'red';
+circle[1].style.backgroundColor = 'yellow';
+circle[2].style.backgroundColor = 'green';
 
-// console.log(options);
-
-// for (let key in options) {
-//     console.log('Свойство ' + key + ' имеет значение ' + options[key]);
+// for (let i = 0; i < heart.length; i++) {
+//     heart[i].style.backgroundColor = 'blue';
 // }
-// console.log(Object.keys(options).length);
 
-// let arr = ["first", 2, 3, "four", 5];
-
-// // for (let i = 0; i < arr.length; i++) {
-// //     console.log(arr[i]);
-// // }
-
-// arr.forEach(function(item, i, mass){
-//     console.log(i + ': ' + item + ' (массив: ' + mass + ')');
+// heart.forEach(function(item, i, hearts) {
+//     item.style.backgroundColor = 'blue';
 // });
 
-// console.log(arr);
+let div = document.createElement('div'),
+    text = document.createTextNode('Тут был я');
 
-// let mass = [1, 3, 4, 6, 7];
+div.classList.add('black');
 
-// for (let key of mass) {
-//     console.log(key);
-// }
+// document.body.appendChild(div);
 
-// let ans = prompt("", ""),
-//     arr = [];
+// wrapper.appendChild(div);
 
-// arr = ans.split(',');
-// console.log(arr);
+// div.innerHTML = '<h1>Hello world!</h1>';
+div.textContent = 'Hello world!';
 
-// let arr = ["qweqwe", 'zzz', 'pp', 'rqa'],
-//     i = arr.join(', ');
+document.body.insertBefore(div, circle[0]);
+document.body.removeChild(circle[1]);
+wrapper.removeChild(heart[1]);
 
-// console.log(typeof(i));
+document.body.replaceChild(btn[1], circle[1]);
 
-// let arr = [1, 15, 4],
-//     i = arr.sort(compareNum);
-
-// function compareNum(a,b) {
-//     return a-b;
-// }
-
-// console.log(arr);
-
-let soldier = {
-    health: 200,
-    armor: 100
-};
-
-for(let key in soldier) {
-    console.log(key + ": " + soldier[key]);
-}
-let testOb = {
-	a: 1,
-	b: 2
-};
-
-for(let key in testOb) {
-	console.log(key + ": " + testOb[key]);
-}
+console.log(div);
