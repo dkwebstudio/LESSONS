@@ -1,43 +1,37 @@
 'use strict';
 
-let box = document.getElementById('box'),
-    btn = document.getElementsByTagName('button'),
-    circle = document.getElementsByClassName('circle'),
-    heart = document.querySelectorAll('.heart'),
-    oneHeart = document.querySelector('.heart'),
-    wrapper =  document.querySelector('.wrapper');
+// let timerId = setTimeout(sayHello, 3000);
+// clearTimeout(timerId);
 
-box.style.backgroundColor = 'blue';
-btn[1].style.borderRadius = '100%';
+// let timerId = setInterval(sayHello, 3000);
+// clearTimeout(timerId);
 
-circle[0].style.backgroundColor = 'red';
-circle[1].style.backgroundColor = 'yellow';
-circle[2].style.backgroundColor = 'green';
-
-// for (let i = 0; i < heart.length; i++) {
-//     heart[i].style.backgroundColor = 'blue';
+// function sayHello() {
+//     console.log("Hello");
 // }
 
-// heart.forEach(function(item, i, hearts) {
-//     item.style.backgroundColor = 'blue';
+// let timerId = setTimeout(function log() {
+//     console.log("Hello");
+//     setTimeout(log, 2000);
 // });
 
-let div = document.createElement('div'),
-    text = document.createTextNode('Тут был я');
+let btn = document.querySelector('.btn'),
+    elem = document.querySelector('.box');
 
-div.classList.add('black');
+function myAnimation() {
+    let pos = 0;
+    
+    let id = setInterval(frame, 10);
 
-// document.body.appendChild(div);
+    function frame() {
+        if(pos == 300) {
+            clearInterval(id);
+        } else {
+            pos++;
+            elem.style.top = pos + 'px';
+            elem.style.left = pos + 'px';
+        }
+    }
+}
 
-// wrapper.appendChild(div);
-
-// div.innerHTML = '<h1>Hello world!</h1>';
-div.textContent = 'Hello world!';
-
-document.body.insertBefore(div, circle[0]);
-document.body.removeChild(circle[1]);
-wrapper.removeChild(heart[1]);
-
-document.body.replaceChild(btn[1], circle[1]);
-
-console.log(div);
+btn.addEventListener("click", myAnimation);
